@@ -12,9 +12,9 @@ from firedrake import UnitSquareMesh, VectorFunctionSpace, \
 T = 10.0
 Re = 3000.0
 Umax = 1.0
-C=0.5
+C=0.3
 
-N=int((Re**(0.75)) * 1.5)
+N=int((Re**(0.75)) * 2.0)
 
 dt=C*(1.0/N)/Umax
 
@@ -121,5 +121,5 @@ for i in range(numSteps):
     # Move to next time step
     u0.assign(u1)
     t += dt
-    print(f"t ={t}")
+    print("t=%f" % t)
 
